@@ -1,0 +1,6 @@
+--color
+--warnings
+--default-path=.
+--format=doc
+--require ./spec_helper
+--order=defined
