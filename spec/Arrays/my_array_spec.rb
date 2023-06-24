@@ -1,4 +1,4 @@
-require_relative 'my_array'
+require_relative '../../Arrays/my_array'
 
 RSpec.describe 'MyArray' do
   let(:arr) { MyArray.new }
