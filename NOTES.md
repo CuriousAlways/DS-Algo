@@ -724,3 +724,103 @@ L-->F
 ```
 
 
+
+---
+# ALGORITHMS
+
+## SORTING ALGORITHMS
+
+### 1. INSERTION SORT
+- In place sorting. It works really well if data is partially sorted.
+- Time complexity `O(n^2)`
+
+```ruby
+# Sorting in descending order
+def insertion_sort(a=[])
+  (1...a.length).each do |i|
+    j = i - 1
+
+    while j >= 0 do
+      if a[j] < a[j+1]
+        #swap
+        temp = a[j]
+        a[j] = a[j+1]
+        a[j+1] = temp
+      else
+        break
+      end
+
+      j -= 1
+    end
+  end
+end
+```
+
+### 2. MERGE SORT
+- Merge sort relies on the fact that if we have 2 sorted arrays we can merge them in linear time complexity i.e. `O(n)`
+- Steps in merge sort :
+  - divide list/array in two halves
+  - sort each each half
+  - merge two sorted halves to get back sorted array.
+- Merge sort is run recursively so we divide list/array until we reach base case i.e. single element list/array and from their we rebuild sorted array.
+- Time complexity: `O(nlog(n))`
+
+```ruby
+# merging two sorted arrays in ascending order
+# a -> list/array
+# left -> starting point for left subarray
+# mid -> points separting 2 subarrays (included in left array)
+# right -> ending index for right subarray
+def merge(a, left, mid, right)
+  i = left
+  j = mid + 1
+  temp = []
+
+  while(i <= mid && j <= right)
+    if(a[i] <= a[j])
+      temp << a[i]
+      i += 1
+    else
+      temp << a[j]
+      j += 1
+    end
+  end
+
+  # add remaining left subarray to temp array
+  if(i <= mid)
+    temp.concat(a[i..mid])
+  end
+
+  # add remaining right subarray to temp array
+  if(j <= right)
+    temp.concat(a[j..right])
+  end
+
+end
+```
+
+
+## SEARCHING ALGORITHMS
+### 1. BINARY SEARCH
+- It is used to search an algorithm in already **`sorted`** list.
+- Time complexity: `O(log(n))`
+
+```ruby
+# searching an `a` already sorted in ascending order for an element `el`
+def binary_search(a, el)
+  left = 0
+  right = a.length - 1
+
+  while(left <= right)
+    mid = (left + right)/2
+
+    if(a[mid] == el)
+      return mid
+    elsif a[mid] > el
+      right = mid -1
+    else
+      left = mid + 1
+    end
+  end
+end
+```
