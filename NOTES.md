@@ -766,6 +766,22 @@ end
 - Time complexity: `O(nlog(n))`
 
 ```ruby
+# merge sort
+# arr -> list/array
+# left -> starting index of subarray to be sorted
+# right -> end index of subarray to be sorted
+def merge_sort(arr, left, right)
+  return if left >= right
+
+  mid = (left + right)/2
+
+  merge_sort(arr, left, mid)
+  merge_sort(arr, mid + 1, right)
+
+  merge(arr, left, mid, right)
+end
+
+
 # merging two sorted arrays in ascending order
 # a -> list/array
 # left -> starting point for left subarray
@@ -796,6 +812,8 @@ def merge(a, left, mid, right)
     temp.concat(a[j..right])
   end
 
+  # copy back sorted values to original array
+  a[left..right] = temp
 end
 ```
 
