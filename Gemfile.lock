@@ -26,10 +26,11 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   debug
   rspec
 
 BUNDLED WITH
-   2.3.20
+  4.0.6

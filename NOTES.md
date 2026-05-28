@@ -29,6 +29,54 @@
 | Exponential time   | `O(b^n)` where `b > 1`  |
 | Factorial time     | `O(n!)`  |
 
+# Search Algorithms
+## Linear Search
+- Sequentially search element one after another until we find the required element.
+- Time complexity: `O(n)` 
+```rb
+def linear_search(arr, element)
+  arr.each_with_index do |el, index|
+    return index if el == element
+  end
+end
+```
+
+## Binary Search
+- Very efficient algorithm to search element in **Ordered Array**
+- Time Complexity: `O(log(n))`
+- In each iteration we reduce our search space by half.
+```rb
+# assuming arr is sorted in asc order like
+# [1,2,3,4,5]
+def binary_search(arr, element)
+  start_index = 0
+  end_index = arr.size - 1
+
+  while(start_index <=end_index)
+    midpoint = (start_index + end_index)/2
+    value = arr[midpoint]
+    return midpoint if value == element
+
+    if value < element
+      start_index = midpoint + 1
+    else
+      end_index = end_index - 1
+    end
+  end
+end
+```
+
+## Sorting Algorithm compared
+```mermaid
+%%{init: {"theme": "default"}}%%
+xychart-beta
+    title "Sorting Algorithms compared"
+    x-axis "Input size" [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 100]
+    y-axis "Number of steps" 1 --> 100
+    line "Linear (y = x)" [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    line "Logarithmic (y = log(x))" [0.0, [0.0, 6.64, 7.64, 8.23, 8.64, 8.97, 9.23, 9.45, 9.64, 9.81, 9.97]
+```
+
 # Linked List
 - sequential list of node which holds data.
 - Every node points to (store reference to) to next element
