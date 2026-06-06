@@ -66,15 +66,41 @@ def binary_search(arr, element)
 end
 ```
 
-## Sorting Algorithm compared
+## Seaching Algorithm compared
 ```mermaid
 %%{init: {"theme": "default"}}%%
 xychart-beta
-    title "Sorting Algorithms compared"
+    title "Searching Algorithms compared"
     x-axis "Input size" [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 100]
     y-axis "Number of steps" 1 --> 100
     line "Linear (y = x)" [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-    line "Logarithmic (y = log(x))" [0.0, [0.0, 6.64, 7.64, 8.23, 8.64, 8.97, 9.23, 9.45, 9.64, 9.81, 9.97]
+    line "Logarithmic (y = log(x))" [0.0, 6.64, 7.64, 8.23, 8.64, 8.97, 9.23, 9.45, 9.64, 9.81, 9.97]
+```
+
+# Sorting Algorithms
+## Bubble sort
+- in each pass we place one element in correct position
+- Time complexity: $BigO(N^2)$
+```rb
+# bubble sort array in ascending order
+def bubble_sort(arr)
+  arr = arr.dup
+  unsorted_size = arr.size
+  sorted = false
+  while !sorted
+    current = 1
+    sorted = true
+    while current < unsorted_size
+      if arr[current - 1] > arr[current]
+        arr[current - 1], arr[current] = arr[current], arr[current -1]
+        sorted = false
+      end
+      current += 1
+    end
+    unsorted_size -= 1
+  end
+  arr
+end
 ```
 
 # Linked List
