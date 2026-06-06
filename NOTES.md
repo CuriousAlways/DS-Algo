@@ -71,11 +71,12 @@ end
 %%{init: {"theme": "default"}}%%
 xychart-beta
     title "Searching Algorithms compared"
-    x-axis "Input size" [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 100]
+    x-axis "Input size" [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
     y-axis "Number of steps" 1 --> 100
     line "Linear (y = x)" [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     line "Logarithmic (y = log(x))" [0.0, 6.64, 7.64, 8.23, 8.64, 8.97, 9.23, 9.45, 9.64, 9.81, 9.97]
 ```
+*to show graphs properly y-axis is scaled 1:10*
 
 # Sorting Algorithms
 ## Bubble sort
