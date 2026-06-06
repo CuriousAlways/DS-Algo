@@ -76,7 +76,7 @@ xychart-beta
     line "Linear (y = x)" [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     line "Logarithmic (y = log(x))" [0.0, 6.64, 7.64, 8.23, 8.64, 8.97, 9.23, 9.45, 9.64, 9.81, 9.97]
 ```
-*to show graphs properly y-axis is scaled 1:10*
+*to show graphs properly y-axis is scaled 1:10 for linear plot*
 
 # Sorting Algorithms
 ## Bubble sort
